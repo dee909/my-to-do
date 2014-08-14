@@ -13,6 +13,16 @@
                 "classList.has('completed')": {"<-": "task.completed"}
             }
         },
+        "badge": {
+            "prototype": "digit/ui/badge.reel",
+            "properties": {
+                "element": {"#": "badge"},
+                "axis": "horizontal"
+            },
+            "bindings": {
+                "value": {"<-": "@owner.task.level"}
+            }
+        },
         "checkbox": {
             "prototype": "digit/ui/checkbox.reel",
             "properties": {
@@ -21,6 +31,19 @@
             },
             "bindings": {
                 "checked": {"<->": "@owner.task.completed"}
+            }
+        },
+        "slider": {
+            "prototype": "digit/ui/slider.reel",
+            "properties": {
+                "element": {"#": "slider"},
+                "axis": "horizontal",
+                "max": 100,
+                "min": 0,
+                "value": 50
+            },
+            "bindings": {
+                "value": {"<->": "@owner.task.level"}
             }
         },
         "textField": {
@@ -40,6 +63,8 @@
     <div data-montage-id="owner" class="Task">
         <input type="checkbox" data-montage-id="checkbox">
         <input data-montage-id="textField" type="text">
+        <div data-montage-id="slider"></div>
+        <output data-montage-id="badge"></output>
     </div>
 </body>
 </html>
