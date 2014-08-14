@@ -14,3 +14,17 @@ html {
 body {
     margin: 0; /* Remove default margin */
 }
+
+.Main {
+    padding: 1em;
+    text-align: center;
+
+    background-color: hsl(0, 0%, 30%);
+    color: hsla(140, 100%, 50%, 0.5);
+
+}
+
+.Task {
+    padding: .5em;
+    text-align: center;
+}
