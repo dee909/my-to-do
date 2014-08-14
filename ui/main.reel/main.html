@@ -37,7 +37,7 @@
             "properties": {
                 "element": {"#": "button"},
                 "enabled": true,
-                "label": "Add Task"
+                "label": "Add"
             },
             "listeners": [
                 {
@@ -65,6 +65,14 @@
                 "task": {"<-": "@list:iteration.object"}
             }
         },
+        "textField": {
+            "prototype": "digit/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField"},
+                "placeholderValue": "Text",
+                "value": "new task"
+            }
+        },
         "title": {
             "prototype": "digit/ui/title.reel",
             "properties": {
@@ -76,8 +84,9 @@
     </script>
 </head>
 <body>
-    <div data-montage-id="main" data-montage-skin="light" class="Main">
+    <div data-montage-id="main" data-montage-skin="dark" class="Main">
         <h1 data-montage-id="title"></h1>
+        <input data-montage-id="textField" type="text">
         <button data-montage-id="button"></button>
         <output data-montage-id="badge"></output>
         <ul data-montage-id="list">
